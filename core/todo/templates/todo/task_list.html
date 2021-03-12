@@ -1,0 +1,10 @@
+{% block content  %}
+<a href="{% url 'task-create'   %}" >Add new task</a>
+{% for task in tasks  %}
+    <p>{{ task.title  }}<a href="{% url 'update' task.id %}"> edit </a><a href="{% url 'detail' task.id %}"> detail </a><a href="{% url 'update' task.id %}"> edit </a><a href="{% url 'delete' task.id %}"> detail </a></p>
+
+{% empty  %}
+nothing here add something    
+{% endfor  %}
+
+{% endblock  %}
