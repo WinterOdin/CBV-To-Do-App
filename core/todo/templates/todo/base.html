@@ -29,7 +29,15 @@
 </head>
 <body>
 
+{% if request.user.is_authenticated  %}
+    hi {{ request.user  }}
+    <a href="{% url 'logout'  %}">Log Out</a>
+    <hr>
+{% else  %}
 
+<a href="{% url 'login'  %}">Log in</a>
+<a href="{% url 'register'  %}">create acc</a>
+{% endif  %}
 <div class="containerAnimateRef">
 {% block content  %}
 
